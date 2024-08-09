@@ -1,0 +1,18 @@
+[package]
+name = "bar"
+version = "0.1.0"
+edition = "2021"
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+foo.workspace = true
+
+
+
+
+

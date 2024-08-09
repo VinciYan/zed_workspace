@@ -1,0 +1,27 @@
+[package]
+name = "lazy_demo"
+version = "0.1.0"
+edition = "2021"
+
+
+
+[workspace]
+members = ["crates/foo", "crates/bar"]
+
+[dependencies]
+foo = { path = "crates/foo" }
+bar = { path = "crates/bar" }
+
+[workspace.dependencies]
+foo = { path = "crates/foo" }
+bar = { path = "crates/bar" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unused_variables = "warn"
+
+[workspace.lints.clippy]
+enum_glob_use = "deny"
+
+[lints]
+workspace = true

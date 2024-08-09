@@ -1,0 +1,16 @@
+[workspace]
+members = ["crates/foo", "crates/bar", "crates/my_project"]
+default-members = ["crates/my_project"]
+resolver = "2"
+
+[workspace.dependencies]
+foo = { path = "crates/foo" }
+bar = { path = "crates/bar" }
+rand = "0.8.5"  # 添加 rand 作为工作空间依赖
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unused_variables = "warn"
+
+[workspace.lints.clippy]
+enum_glob_use = "deny"
